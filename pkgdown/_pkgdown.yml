@@ -22,13 +22,18 @@ navbar:
         href: https://github.com/bbieri/SahelGraphR
 
 reference:
-- title: "`{ggplot2}` themes"
-  desc: "Functions for consistent ggplot plots."
-  contents:
-  - starts_with("theme")
-- title: "Miscellaneous data vizualisation functions"
-  desc: >
-    Functions and palette list used to theme graphs.
-  contents:
-  - asp_palettes
-  - asp_palette
+  - title: "`{ggplot2}` themes"
+    desc: "Functions for consistent ggplot plots."
+    contents:
+    - starts_with("theme")
+  - title: "Miscellaneous data vizualisation functions"
+    desc: >
+      Functions and palette list used to theme graphs.
+    contents:
+    - asp_palettes
+    - asp_palette
+footer:
+  structure:
+    left: devs
+  components:
+    devs: Developed by [Bernhard Bieri](https://bernhardbieri.ch/).
