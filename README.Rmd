@@ -1,23 +1,36 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(badger) # For badges below.
+library(extrafont) # To load Windows fonts on R
+extrafont::loadfonts(device = "win")
+```
 
 # SahelGraphR <img src="man/figures/logo.png" align="right" height="138" />
 
 <!-- badges: start -->
-
 [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
-[![](https://img.shields.io/badge/devel%20version-0.0.0.9000-blue.svg)](https://github.com/BBieri/SahelGraphR)
-[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+`r badger::badge_devel("BBieri/SahelGraphR", "blue")`
+`r badger::badge_lifecycle("experimental")`
 <!-- badges: end -->
 
-`{SahelGraphR}` is a package aimed at providing functions to speed up
-the production of graphs (and maybe tables in the future?) of the Sahel
-ASP RCT evaluation by DIME.
+`{SahelGraphR}` is a package aimed at providing functions to speed up the
+production of graphs (and maybe tables in the future?) of the Sahel ASP
+RCT evaluation by DIME.
 
 ## Installation
 
-You can install the development version of SahelGraphR from
-[GitHub](https://github.com/) with:
+You can install the development version of SahelGraphR from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -26,14 +39,14 @@ devtools::install_github("BBieri/SahelGraphR")
 
 ## Themes
 
-This package contains two themes for the production of `{ggplot2}`
-graphs for the Sahel ASP graphs.
+This package contains two themes for the production of `{ggplot2}` graphs for
+the Sahel ASP graphs.
 
 ### Dark theme:
 
 Here is an example graph using the dark theme:
 
-``` r
+```{r DarkTheme}
 library(SahelGraphR)
 ## basic example code
 library(ggplot2)
@@ -59,13 +72,12 @@ ggplot(cty_mpg, aes(x = make, y = mileage)) +
   theme(axis.text.x = element_text(angle = 65, vjust = 0.6))
 ```
 
-<img src="man/figures/README-DarkTheme-1.png" width="100%" />
 
 ### Light theme:
 
 Here is an example graph using the light theme:
 
-``` r
+```{r LightTheme}
 library(SahelGraphR)
 ## basic example code
 library(ggplot2)
@@ -90,5 +102,3 @@ ggplot(cty_mpg, aes(x = make, y = mileage)) +
   SahelGraphR::themeasplight() +
   theme(axis.text.x = element_text(angle = 65, vjust = 0.6))
 ```
-
-<img src="man/figures/README-LightTheme-1.png" width="100%" />

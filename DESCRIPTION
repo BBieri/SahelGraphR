@@ -1,0 +1,19 @@
+Package: SahelGraphR
+Title: SahelGraphR Accelerates the Production of Sahel ASP RCT Graphs and Tables
+Version: 0.0.0.9000
+Authors@R: 
+    person("Bernhard", "Bieri", , "bernhard.bieri1@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5943-9059"))
+Description: SahelGraphR Accelerates the Production of Sahel ASP RCT Graphs and Tables. It includes `{ggplot2}` themes and color palettes for the project.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    ggplot2,
+    hrbrthemes
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://bbieri.github.io/SahelGraphR/
