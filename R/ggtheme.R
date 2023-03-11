@@ -59,17 +59,17 @@ themeaspdark <- function(...) {
 #'  cty_mpg <- cty_mpg[order(cty_mpg$mileage), ]  # sort
 #'  cty_mpg$make <- factor(cty_mpg$make, levels = cty_mpg$make)
 #'  # Plot
-#'  ggplot(cty_mpg, aes(x=make, y=mileage)) +
-#'    geom_segment(aes(x=make,
-#'                     xend=make,
-#'                     y=0,
-#'                     yend=mileage), color = "#C3CED6") +
+#'  ggplot(cty_mpg, aes(x = make, y = mileage)) +
+#'    geom_segment(aes(x = make,
+#'                     xend = make,
+#'                     y = 0,
+#'                     yend = mileage), color = "#C3CED6") +
 #'    geom_point(size=3, color = "#C3CED6") +
-#'    labs(title="Lollipop Chart",
-#'         subtitle="Make Vs Avg. Mileage",
-#'         caption="source: mpg") +
+#'    labs(title = "Lollipop Chart",
+#'         subtitle = "Make Vs Avg. Mileage",
+#'         caption = "source: mpg") +
 #'    SahelGraphR::themeaspdark() +
-#'    theme(axis.text.x = element_text(angle=65, vjust=0.6))
+#'    theme(axis.text.x = element_text(angle = 65, vjust = 0.6))
 #'  }
 
 themeasplight <- function(...) {
