@@ -32,6 +32,11 @@ reference:
     contents:
     - asp_palettes
     - asp_palette
+  - title: "Utility functions for model estimation"
+    desc: >
+      Utility functions for model estimation with multiple models.
+    contents:
+    - starts_with("collate_")
 footer:
   structure:
     left: devs
