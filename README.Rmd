@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 library(badger) # For badges below.
 library(extrafont) # To load Windows fonts on R
 extrafont::loadfonts(device = "win")
+library(tidyverse)
+library(fabricatr)
+library(SahelGraphR)
+library(patchwork)
 ```
 
 # SahelGraphR <img src="man/figures/logo.png" align="right" height="138" />
@@ -37,9 +41,93 @@ You can install the development version of SahelGraphR from [GitHub](https://git
 devtools::install_github("BBieri/SahelGraphR")
 ```
 
+## Graphs
+
+`{SahelGraphr}` contains functions and wrappers to rapidly produce consistent
+graphs across the four countries.
+
+### Coefficient Graph
+
+```{r coefgraph, echo=FALSE}
+# Example with simulated data
+set.seed(1234)
+prodregs <- fabricatr::fabricate(N = 8,
+                                 var_name = c("consum_2_day_eq_ppp", "consum_2_day__ppp", "food_2_day_eq_ppp",
+                                              "food_2_day_ppp", "food_2_day_g_ppp", "food_2_day_g_eq_ppp",
+                                              "food_2_g_d", "FIES_rvrs_raw"),
+                                 b0 = 0,
+                                 b1 = rnorm(N, 0, 1),
+                                 b2 = rnorm(N, 0, 1),
+                                 b3 = rnorm(N, 0, 1),
+                                 avg0 = rnorm(N, 7, 1),
+                                 avg1 = rnorm(N, 8, 1),
+                                 avg2 = rnorm(N, 9, 1),
+                                 avg3 = rnorm(N, 10, 1),
+                                 se0 = rnorm(N, 0, 1),
+                                 se1 = rnorm(N, 0, 1),
+                                 se2 = rnorm(N, 0, 1),
+                                 se3 = rnorm(N, 0, 1),
+                                 ci95_0 = rnorm(N, 2, 1),
+                                 ci95_1 = rnorm(N, 2, 1),
+                                 ci95_2 = rnorm(N, 2, 1),
+                                 ci95_3 = rnorm(N, 2, 1),
+                                 p0 = rnorm(N, 0.8, 0.5),
+                                 p1 = rnorm(N, 0.8, 0.5),
+                                 p2 = rnorm(N, 0.8, 0.5),
+                                 p3 = rnorm(N, 0.8, 0.5),
+                                 mht_family = 1) |>
+  dplyr::select(-ID)
+ # Vertical
+ sahel_ggcoefs(sahel_prep_ggcoefs(prodregs))
+```
+
+### Distribution Graphs
+
+Distribution graphs allow users to visualize the common support of
+distributions. Visit the package site for more options.
+
+```{r distributiongraphs, echo=FALSE}
+sahel_gghalfviolin(
+  data = sahel_sim,
+  variable = hh_income,
+  countries = country_names,
+  orientation = "Horizontal",
+  title = "Household Income",
+  scale = ggplot2::scale_y_log10()
+) + sahel_gghalfviolin(
+  data = sahel_sim,
+  variable = hh_consumption,
+  countries = country_names,
+  orientation = "Horizontal",
+  title = "Household Consumption",
+  scale = ggplot2::scale_y_log10()
+)
+```
+
+## Maps
+
+`{SahelGraphR}` includes a helper function to download (sub-)national shapefiles
+from [HDX](https://data.humdata.org/) for easy and fast mapmaking in R of the
+four countries in the RCT.
+
+```{r sahelmaps, echo=FALSE}
+SEN <- get_shapefiles(country_code = "SEN", level = 2) |>
+  dplyr::rename(ADM2_NAME = ADM2_FR) |>
+  dplyr::select(ADM2_NAME, geometry)
+
+ggplot2::ggplot(SEN) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 45,
+                                                  type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Senegal") +
+  themeaspdark()
+```
+
+
 ## Themes
 
-This package contains two themes for the production of `{ggplot2}` graphs for
+This package also contains two themes for the production of `{ggplot2}` graphs for
 the Sahel ASP graphs.
 
 ### Dark theme:
