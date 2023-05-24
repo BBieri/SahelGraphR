@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">SahelGraphR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,12 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/SahelMaps.html">Creating Maps</a>
+  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">News</a>
@@ -44,7 +50,7 @@
     </div>
 
     <div class="section level2">
-      <h2 id="-ggplot-themes"><code>{ggplot2}</code> themes<a class="anchor" aria-label="anchor" href="#-ggplot-themes"></a></h2>
+      <h2 id="-ggplot-plot-helpers"><code>{ggplot2}</code> plot helpers<a class="anchor" aria-label="anchor" href="#-ggplot-plot-helpers"></a></h2>
       
       <p class="section-desc"></p><p>Functions for consistent ggplot plots.</p>
 
@@ -55,6 +61,41 @@
       
 
       <dl><dt>
+          
+          <code><a href="geom_flat_violin_l.html">geom_flat_violin_l()</a></code> 
+        </dt>
+        <dd>Flat (or half) vertical violin plot geom. Left side.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="geom_flat_violin_r.html">geom_flat_violin_r()</a></code> 
+        </dt>
+        <dd>Flat (or half) vertical violin plot geom. Right side.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_ggboxplot.html">sahel_ggboxplot()</a></code> 
+        </dt>
+        <dd>Individual Boxplot Plots per Country</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_ggcoefs.html">sahel_ggcoefs()</a></code> 
+        </dt>
+        <dd>Barplot for Sahel ASP coefficients with sensible defaults</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_gghalfviolin.html">sahel_gghalfviolin()</a></code> 
+        </dt>
+        <dd>High-Level Wrapper Half Violin Plots per Country</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_ggridges.html">sahel_ggridges()</a></code> 
+        </dt>
+        <dd>Individual Ridgeline Plots per Country</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_ggviolin.html">sahel_ggviolin()</a></code> 
+        </dt>
+        <dd>Individual Violin Plots per Country</dd>
+      </dl><dl><dt>
           
           <code><a href="themeaspdark.html">themeaspdark()</a></code> 
         </dt>
@@ -68,7 +109,7 @@
       </dl></div><div class="section level2">
       <h2 id="miscellaneous-data-vizualisation-functions">Miscellaneous data vizualisation functions<a class="anchor" aria-label="anchor" href="#miscellaneous-data-vizualisation-functions"></a></h2>
       
-      <p class="section-desc"></p><p>Functions and palette list used to theme graphs.</p>
+      <p class="section-desc"></p><p>Preprocessing functions and palette list used to theme graphs.</p>
 
       
     </div><div id="" class="section level2">
@@ -78,6 +119,21 @@
 
       <dl><dt>
           
+          <code><a href="sahel_prep_gg.html">sahel_prep_gg()</a></code> 
+        </dt>
+        <dd>Sahel Prepare ggplot function</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_prep_gg_binary.html">sahel_prep_gg_binary()</a></code> 
+        </dt>
+        <dd>Prepare Sahel binary variables for plotting.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sahel_prep_ggcoefs.html">sahel_prep_ggcoefs()</a></code> 
+        </dt>
+        <dd>Sahel Prepare data for <code><a href="../reference/sahel_ggcoefs.html">sahel_ggcoefs()</a></code></dd>
+      </dl><dl><dt>
+          
           <code><a href="asp_palettes.html">asp_palettes</a></code> 
         </dt>
         <dd>Complete list of palettes</dd>
@@ -86,8 +142,13 @@
           <code><a href="asp_palette.html">asp_palette()</a></code> 
         </dt>
         <dd>A palette generator for the Sahel Adaptive Social Protection RCT</dd>
+      </dl><dl><dt>
+          
+          <code><a href="get_shapefiles.html">get_shapefiles()</a></code> 
+        </dt>
+        <dd>Download (Sub)National Shapefiles</dd>
       </dl></div><div class="section level2">
-      <h2 id="utility-functions-for-model-estimation">Utility functions for model estimation<a class="anchor" aria-label="anchor" href="#utility-functions-for-model-estimation"></a></h2>
+      <h2 id="utility-functions-for-model-estimation-with-r">Utility functions for model estimation with R<a class="anchor" aria-label="anchor" href="#utility-functions-for-model-estimation-with-r"></a></h2>
       
       <p class="section-desc"></p><p>Utility functions for model estimation with multiple models.</p>
 
@@ -107,6 +168,22 @@
           <code><a href="collate_predictions.html">collate_predictions()</a></code> 
         </dt>
         <dd>Collate predicted values of a list of models into a large data frame.</dd>
+      </dl></div><div class="section level2">
+      <h2 id="example-datasets">Example Datasets<a class="anchor" aria-label="anchor" href="#example-datasets"></a></h2>
+      
+      <p class="section-desc"></p><p>Included datasets for examples and other shenanigans.</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="sahel_sim.html">sahel_sim</a></code> 
+        </dt>
+        <dd><code>sahel_sim</code> dataset</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
@@ -117,7 +194,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p></p><p>Part of the <a href="https://www.socialscienceregistry.org/trials/2544" class="external-link">Sahel ASP RCT</a>.</p>
 </div>
 
     </footer></div>

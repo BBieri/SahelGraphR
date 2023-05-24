@@ -10,6 +10,12 @@
     <loc>https://bbieri.github.io/SahelGraphR/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://bbieri.github.io/SahelGraphR/articles/SahelMaps.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/articles/index.html</loc>
+  </url>
+  <url>
     <loc>https://bbieri.github.io/SahelGraphR/authors.html</loc>
   </url>
   <url>
@@ -31,7 +37,43 @@
     <loc>https://bbieri.github.io/SahelGraphR/reference/collate_predictions.html</loc>
   </url>
   <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/geom_flat_violin_l.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/geom_flat_violin_r.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/get_shapefiles.html</loc>
+  </url>
+  <url>
     <loc>https://bbieri.github.io/SahelGraphR/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_ggboxplot.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_ggcoefs.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_gghalfviolin.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_ggridges.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_ggviolin.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_prep_gg.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_prep_gg_binary.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_prep_ggcoefs.html</loc>
+  </url>
+  <url>
+    <loc>https://bbieri.github.io/SahelGraphR/reference/sahel_sim.html</loc>
   </url>
   <url>
     <loc>https://bbieri.github.io/SahelGraphR/reference/themeaspdark.html</loc>
