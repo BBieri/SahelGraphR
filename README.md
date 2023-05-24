@@ -24,9 +24,35 @@ You can install the development version of SahelGraphR from
 devtools::install_github("BBieri/SahelGraphR")
 ```
 
+## Graphs
+
+`{SahelGraphr}` contains functions and wrappers to rapidly produce
+consistent graphs across the four countries.
+
+### Coefficient Graph
+
+<img src="man/figures/README-coefgraph-1.png" width="100%" />
+
+### Distribution Graphs
+
+Distribution graphs allow users to visualize the common support of
+distributions. Visit the package site for more options.
+
+<img src="man/figures/README-distributiongraphs-1.png" width="100%" />
+
+## Maps
+
+`{SahelGraphR}` includes a helper function to download (sub-)national
+shapefiles from [HDX](https://data.humdata.org/) for easy and fast
+mapmaking in R of the four countries in the RCT.
+
+    #> Departement Level Selected
+
+<img src="man/figures/README-sahelmaps-1.png" width="100%" />
+
 ## Themes
 
-This package contains two themes for the production of `{ggplot2}`
+This package also contains two themes for the production of `{ggplot2}`
 graphs for the Sahel ASP graphs.
 
 ### Dark theme:

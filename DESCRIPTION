@@ -1,6 +1,6 @@
 Package: SahelGraphR
 Title: SahelGraphR Accelerates the Production of Sahel ASP RCT Graphs and Tables
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Bernhard", "Bieri", , "bernhard.bieri1@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5943-9059"))
@@ -13,9 +13,24 @@ Imports:
     broom,
     dplyr,
     ggplot2,
+    ggridges,
     hrbrthemes,
-    rlang
+    rlang,
+    sf,
+    stringr,
+    tidyr
 Suggests: 
-    testthat (>= 3.0.0)
+    patchwork,
+    plyr,
+    fabricatr,
+    haven,
+    testthat (>= 3.0.0),
+    rmarkdown,
+    badger
+Remotes:
+    marcus-waldman/credi
 Config/testthat/edition: 3
 URL: https://bbieri.github.io/SahelGraphR/
+Depends: 
+    R (>= 2.10)
+LazyData: true
