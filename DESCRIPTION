@@ -13,9 +13,24 @@ Imports:
     broom,
     dplyr,
     ggplot2,
+    ggridges,
     hrbrthemes,
-    rlang
+    rlang,
+    sf,
+    stringr,
+    tidyr
 Suggests: 
-    testthat (>= 3.0.0)
+    patchwork,
+    plyr,
+    fabricatr,
+    haven,
+    testthat (>= 3.0.0),
+    rmarkdown,
+    badger
+Remotes:
+    marcus-waldman/credi
 Config/testthat/edition: 3
 URL: https://bbieri.github.io/SahelGraphR/
+Depends: 
+    R (>= 2.10)
+LazyData: true
