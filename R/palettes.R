@@ -17,6 +17,12 @@ asp_palettes <- list(
     "smoke-capital"     = "#bdbdbd",
     "charcoal-psycho"   = "#454545",
     "anthracite-full"   = "#0a0a0a"
+  ),
+  "Countries" = c(
+    "BurkinaFaso"       = "#219ebc",
+    "Mauritania"        = "#e7ecef",
+    "Niger"             = "#ffb703",
+    "Senegal"           = "#fb8500"
   )
 )
 
