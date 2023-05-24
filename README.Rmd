@@ -23,8 +23,6 @@ library(patchwork)
 # SahelGraphR <img src="man/figures/logo.png" align="right" height="138" />
 
 <!-- badges: start -->
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
-`r badger::badge_devel("BBieri/SahelGraphR", "blue")`
 `r badger::badge_lifecycle("experimental")`
 <!-- badges: end -->
 

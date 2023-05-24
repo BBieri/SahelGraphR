@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
-[![](https://img.shields.io/badge/devel%20version-0.0.0.9000-blue.svg)](https://github.com/BBieri/SahelGraphR)
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 

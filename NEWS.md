@@ -1,3 +1,11 @@
+# SahelGraphR 0.1.0
+
+- Updated the `{ggplot2}` theme for the project.
+- Created distribution graph functions.
+- Created coefficient graph functions.
+- Updated the color palette to include country colors.
+- Added map-making functions.
+
 # SahelGraphR 0.0.0.9000
 
 * Initialized the package.
