@@ -8,12 +8,17 @@ authors:
     href: https://bernhardbieri.ch
 navbar:
   structure:
-    left: [home, reference, news]
+    left: [home, reference, articles, news]
     right: [search, github]
   components:
     reference:
         text: Reference
         href: reference/index.html
+    articles:
+        text: Articles
+        menu:
+        - text: Creating Maps
+          href: articles/SahelMaps.html
     news:
       text: News
       href: news/index.html
@@ -22,23 +27,34 @@ navbar:
         href: https://github.com/bbieri/SahelGraphR
 
 reference:
-  - title: "`{ggplot2}` themes"
+  - title: "`{ggplot2}` plot helpers"
     desc: "Functions for consistent ggplot plots."
     contents:
+    - starts_with("geom_flat_violin")
+    - starts_with("sahel_gg")
     - starts_with("theme")
   - title: "Miscellaneous data vizualisation functions"
     desc: >
-      Functions and palette list used to theme graphs.
+      Preprocessing functions and palette list used to theme graphs.
     contents:
+    - starts_with("sahel_prep")
     - asp_palettes
     - asp_palette
-  - title: "Utility functions for model estimation"
+    - get_shapefiles
+  - title: "Utility functions for model estimation with R"
     desc: >
       Utility functions for model estimation with multiple models.
     contents:
     - starts_with("collate_")
+  - title: "Example Datasets"
+    desc: >
+        Included datasets for examples and other shenanigans.
+    contents:
+      - sahel_sim
 footer:
   structure:
     left: devs
+    right: project
   components:
     devs: Developed by [Bernhard Bieri](https://bernhardbieri.ch/).
+    project: Part of the [Sahel ASP RCT](https://www.socialscienceregistry.org/trials/2544).
