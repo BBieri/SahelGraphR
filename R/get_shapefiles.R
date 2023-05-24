@@ -33,16 +33,16 @@ get_shapefiles <-
         "https://data.humdata.org/dataset/2940ed80-4b69-4b98-abaf-af79088852c5/resource/931f500c-1ae6-4812-b2e0-840cc0573672/download/bf_hno_admin_0_3.zip"
       if (level == 0) {
         message("National Level Selected")
-        sf_path <- "bf_hno_admin_0_3/bf_admin0_hno_2022.shp"
+        sf_path <- "tempdata/bf_hno_admin_0_3/bf_admin0_hno_2022.shp"
       } else if (level == 1) {
         message("Regional Level Selected")
-        sf_path <- "bf_hno_admin_0_3/bf_admin1_hno_2022.shp"
+        sf_path <- "tempdata/bf_hno_admin_0_3/bf_admin1_hno_2022.shp"
       } else if (level == 2) {
         message("Departement Level Selected")
-        sf_path <- "bf_hno_admin_0_3/bf_admin2_hno_2022.shp"
+        sf_path <- "tempdata/bf_hno_admin_0_3/bf_admin2_hno_2022.shp"
       } else if (level == 3) {
         message("Arrondissement Level Selected")
-        sf_path <- "bf_hno_admin_0_3/bf_admin3_hno_2022.shp"
+        sf_path <- "tempdata/bf_hno_admin_0_3/bf_admin3_hno_2022.shp"
       } else {
         stop("Wrong level specified. Needs to be between 0 and 3.")
       }
@@ -50,19 +50,19 @@ get_shapefiles <-
       if (level == 0) {
         message("National Level Selected")
         link <- "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/fc164d0b-0df4-45ca-a709-a540e68e62ee/download/ner_adm00_feb2018.zip"
-        sf_path <- "NER_adm00_feb2018.shp"
+        sf_path <- "tempdata/NER_adm00_feb2018.shp"
       } else if (level == 1) {
         message("Regional Level Selected")
         link <- "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/94e06212-3f8f-4c74-a433-1b132d059ea8/download/ner_adm01_feb2018.zip"
-        sf_path <- "NER_adm01_feb2018.shp"
+        sf_path <- "tempdata/NER_adm01_feb2018.shp"
       } else if (level == 2) {
         message("Departement Level Selected")
         link <- "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/4b2bfec2-2f26-4354-bfe0-801f161c23fb/download/ner_adm02_feb2018.zip"
-        sf_path <- "NER_adm02_feb2018.shp"
+        sf_path <- "tempdata/NER_adm02_feb2018.shp"
       } else if (level == 3) {
         message("Arrondissement Level Selected")
         link <- "https://data.humdata.org/dataset/c0e0998c-b45a-4aea-ac06-c1de1d94e596/resource/847c8435-38e2-4fdf-be6f-973966f77470/download/ner_adm03_feb2018.zip"
-        sf_path <- "NER_adm03_feb2018.shp"
+        sf_path <- "tempdata/NER_adm03_feb2018.shp"
       } else {
         stop("Wrong level specified. Needs to be between 0 and 3.")
       }
@@ -71,13 +71,13 @@ get_shapefiles <-
         "https://data.humdata.org/dataset/8d49f50d-92a8-46d9-9462-f821a8058f6d/resource/dacb6ad2-13b6-4f14-b1e9-44b800d76e58/download/mrt_adm_gov_itos_20200801_shp.zip"
       if (level == 0) {
         message("National Level Selected")
-        sf_path <- "mrt_admbnda_adm0_gov_itos_20200801.shp"
+        sf_path <- "tempdata/mrt_admbnda_adm0_gov_itos_20200801.shp"
       } else if (level == 1) {
         message("Regional Level Selected")
-        sf_path <- "mrt_admbnda_adm1_gov_20200801.shp"
+        sf_path <- "tempdata/mrt_admbnda_adm1_gov_20200801.shp"
       } else if (level == 2) {
         message("Departement Level Selected")
-        sf_path <- "mrt_admbnda_adm2_gov_20200801.shp"
+        sf_path <- "tempdata/mrt_admbnda_adm2_gov_20200801.shp"
       } else if (level == 3) {
         message("Arrondissement Level Selected")
         stop("Arrondissement level not availiable. Use departement level instead.")
@@ -90,19 +90,19 @@ get_shapefiles <-
       if (level == 0) {
         message("National Level Selected")
         sf_path <-
-          "Shapefiles/sen_admbnda_adm0_1m_gov_ocha_20190426.shp"
+          "tempdata/Shapefiles/sen_admbnda_adm0_1m_gov_ocha_20190426.shp"
       } else if (level == 1) {
         message("Regional Level Selected")
         sf_path <-
-          "Shapefiles/sen_admbnda_adm1_1m_gov_ocha_20190426.shp"
+          "tempdata/Shapefiles/sen_admbnda_adm1_1m_gov_ocha_20190426.shp"
       } else if (level == 2) {
         message("Departement Level Selected")
         sf_path <-
-          "Shapefiles/sen_admbnda_adm2_1m_gov_ocha_20190426.shp"
+          "tempdata/Shapefiles/sen_admbnda_adm2_1m_gov_ocha_20190426.shp"
       } else if (level == 3) {
         message("Arrondissement Level Selected")
         sf_path <-
-          "Shapefiles/sen_admbnda_adm3_1m_gov_ocha_20190426.shp"
+          "tempdata/Shapefiles/sen_admbnda_adm3_1m_gov_ocha_20190426.shp"
       } else {
         stop("Wrong level specified. Needs to be between 0 and 3.")
       }
@@ -112,7 +112,10 @@ get_shapefiles <-
     # Download
     temp = tempfile()
     download.file(link, temp)
-    unzip(temp)
-    # Return SF object
-    return(sf::read_sf(sf_path))
+    unzip(temp, exdir = "tempdata") # Extract to tempdata folder
+    # Read SF object
+    out <- sf::read_sf(sf_path)
+    # Clean up
+    unlink("tempdata", recursive = T)
+    return(out)
 }
