@@ -1,0 +1,104 @@
+---
+title: "Create Sahel Maps"
+authors: "Bernhard Bieri"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create Sahel Maps}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setting things up:
+
+This vignette describes a workflow on how to easily create maps for the project
+with `{SahelGraphR}`. Before starting, we need to load a few packages which
+will be required to download the data.
+
+```{r setup}
+library(SahelGraphR)
+library(tidyverse)
+library(patchwork)
+```
+
+Once this is done, we proceed and use the `get_shapefiles()` function from
+our package to download the shapefiles for the desired countries at the desired
+level. Note that Mauritania's shapefiles are only availiable until level 2 and not
+3.
+
+```{r download}
+(SEN <- get_shapefiles(country_code = "SEN", level = 2) |>
+    dplyr::rename(ADM2_NAME = ADM2_FR) |>
+    dplyr::select(ADM2_NAME, geometry))
+(BFA <- get_shapefiles(country_code = "BFA", level = 2) |>
+    dplyr::rename(ADM2_NAME = adm2_name1) |>
+    dplyr::select(ADM2_NAME, geometry))
+(NER <- get_shapefiles(country_code = "NER", level = 2) |>
+    dplyr::rename(ADM2_NAME = adm_02) |>
+    dplyr::select(ADM2_NAME, geometry))
+(MRT <- get_shapefiles(country_code = "MRT", level = 2) |>
+    dplyr::rename(ADM2_NAME = ADM2_EN) |>
+    dplyr::select(ADM2_NAME, geometry))
+```
+
+Now that the downloads have successfully been completed, we can start plotting
+the maps. We start with a series of individual plots and a `{patchwork}` plot.
+
+```{r patchwork}
+SEN_MAP <- ggplot2::ggplot(SEN) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 45, type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Senegal") +
+  themeaspdark()
+
+SEN_MAP
+
+BFA_MAP <- ggplot2::ggplot(BFA) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 45, type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Burkina Faso") +
+  themeaspdark()
+
+BFA_MAP
+
+NER_MAP <- ggplot2::ggplot(NER) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 67, type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Niger") +
+  themeaspdark()
+
+MRT_MAP <- ggplot2::ggplot(MRT) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 57, type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Mauritania") +
+  themeaspdark()
+
+MRT_MAP
+
+# Patchwork
+SEN_MAP + BFA_MAP + NER_MAP + MRT_MAP
+```
+
+Finally, we move to merge all of the shapefiles we previously consistently named
+and plot the regional map. Make sure to use the same projections here!
+
+```{r}
+SAHEL_MAP <- ggplot2::ggplot(rbind(SEN, BFA, MRT, NER)) +
+  ggplot2::geom_sf(ggplot2::aes(fill = ADM2_NAME)) +
+  ggplot2::scale_fill_manual(values = asp_palette("Countries", 214, type = "continuous"),
+                             guide = "none")  +
+  ggplot2::labs(title = "Sahel ASP Countries") +
+  themeaspdark()
+SAHEL_MAP
+```
