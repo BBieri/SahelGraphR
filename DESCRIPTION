@@ -1,6 +1,6 @@
 Package: SahelGraphR
 Title: SahelGraphR Accelerates the Production of Sahel ASP RCT Graphs and Tables
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Bernhard", "Bieri", , "bernhard.bieri1@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5943-9059"))
