@@ -13,6 +13,7 @@ sahel_prep_ggcoefs(
     "Daily Food Cons.\\n Ad. Equiv", "Daily Food Cons.",
     "Gifted Daily Food\\n Cons. Ad. Equiv", "Gifted Daily\\n Food Cons.",
     "Consumed Gifted\\n Food {0,1}", "Food Security"),
+  measure = "avg",
   model_number = 1
 )
 }
@@ -22,6 +23,8 @@ sahel_prep_ggcoefs(
 \item{variables}{A character vector of variable names to plot.}
 
 \item{var_labels}{A chacater vector of corresponding variable names.}
+
+\item{measure}{A string indicating the measure to plot e.g. \verb{"avg", b}}
 
 \item{model_number}{Some dataframes have a mht_family variable indicating the
 model type number. Select the model you want to plot by passing it the

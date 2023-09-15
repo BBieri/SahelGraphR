@@ -76,6 +76,7 @@ sahel_prep_gg_binary <- function(data,
 #' @param data A data frame filled with regression output from Stata.
 #' @param variables A character vector of variable names to plot.
 #' @param var_labels A chacater vector of corresponding variable names.
+#' @param measure A string indicating the measure to plot e.g. `"avg", b`
 #' @param model_number Some dataframes have a mht_family variable indicating the
 #'  model type number. Select the model you want to plot by passing it the
 #'  corresponding number.
@@ -131,6 +132,7 @@ sahel_prep_ggcoefs <- function(data,
                                var_labels = c("Daily Cons.\n Ad. Equiv.", "Daily Consumption", "Daily Food Cons.\n Ad. Equiv",
                                               "Daily Food Cons.", "Gifted Daily Food\n Cons. Ad. Equiv", "Gifted Daily\n Food Cons.",
                                               "Consumed Gifted\n Food {0,1}", "Food Security"),
+                               measure = "avg",
                                model_number = 1) {
   # Input checks Pending
   # Prep data
@@ -149,9 +151,7 @@ sahel_prep_ggcoefs <- function(data,
   # Some dark magic pivoting. There is certainly an easier way of doing this
   out |>
     dplyr::filter(stringr::str_detect(Variable, "ci95")) |>
-    dplyr::inner_join(dplyr::filter(out, stringr::str_detect(Variable, "avg")),
+    dplyr::inner_join(dplyr::filter(out, stringr::str_detect(Variable, measure)),
                       c("var_name", "Treatment", "mht_family")) |>
     dplyr::mutate(Value.x = ifelse(stringr::str_detect(Variable.x, "_0"), NA, Value.x))
 }
-
-

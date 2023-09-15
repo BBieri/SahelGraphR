@@ -19,6 +19,8 @@ sahel_gghalfviolin(
   xtitle = NULL,
   ytitle = NULL,
   scale = ggplot2::geom_blank(),
+  xlim = NULL,
+  ylim = NULL,
   add_boxplot = TRUE,
   theme = themeaspdark
 )
@@ -51,6 +53,10 @@ sahel_gghalfviolin(
 \item{ytitle}{Plot y-axis title}
 
 \item{scale}{Scaling function from \code{{ggplot2}}}
+
+\item{xlim}{Define plot limit on x-axis. Supply a vector of bounds, \code{c(325, 500)}.}
+
+\item{ylim}{Define plot limit on y-axis. Supply a vector of bounds, \code{c(325, 500)}.}
 
 \item{add_boxplot}{\code{TRUE} by default. Add a boxplot inside the violin plots?}
 

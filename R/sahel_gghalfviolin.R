@@ -13,6 +13,8 @@
 #' @param xtitle Plot x-axis title
 #' @param ytitle Plot y-axis title
 #' @param scale Scaling function from `{ggplot2}`
+#' @param xlim Define plot limit on x-axis. Supply a vector of bounds, `c(325, 500)`.
+#' @param ylim Define plot limit on y-axis. Supply a vector of bounds, `c(325, 500)`.
 #' @param add_boxplot `TRUE` by default. Add a boxplot inside the violin plots?
 #' @param theme Theme applied
 #' @param orientation Orientation of the graph
@@ -88,6 +90,8 @@ sahel_gghalfviolin <- function(data, variable, countries,
                                xtitle = NULL,
                                ytitle = NULL,
                                scale = ggplot2::geom_blank(),
+                               xlim = NULL,
+                               ylim = NULL,
                                add_boxplot = TRUE,
                                theme = themeaspdark){
 
@@ -109,7 +113,13 @@ sahel_gghalfviolin <- function(data, variable, countries,
         position = ggplot2::position_dodge(1),
         width = width_violin
       )
-    coordflip <- ggplot2::geom_blank()
+    coordflip <- ggplot2::coord_cartesian(
+      xlim = xlim,
+      ylim = ylim,
+      expand = TRUE,
+      default = FALSE,
+      clip = "on"
+    )
   } else if (orientation == "Vertical-Right") {
     violinplot <-
       geom_flat_violin_r(
@@ -117,7 +127,13 @@ sahel_gghalfviolin <- function(data, variable, countries,
         position = ggplot2::position_dodge(1),
         width = width_violin
       )
-    coordflip <- ggplot2::geom_blank()
+    coordflip <- ggplot2::coord_cartesian(
+      xlim = xlim,
+      ylim = ylim,
+      expand = TRUE,
+      default = FALSE,
+      clip = "on"
+    )
   } else if (orientation == "Horizontal") {
     violinplot <-
       geom_flat_violin_r(
@@ -125,7 +141,8 @@ sahel_gghalfviolin <- function(data, variable, countries,
         position = ggplot2::position_dodge(1),
         width = width_violin
       )
-    coordflip <- ggplot2::coord_flip()
+    coordflip <- ggplot2::coord_flip(xlim = xlim,
+                                     ylim = ylim)
   } else {
     stop("Incorrect orientation argument.")
   }
