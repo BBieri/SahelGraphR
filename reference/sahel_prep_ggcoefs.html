@@ -69,6 +69,7 @@ workflow in Stata and makes them ready for plotting.</p>
 <span>    <span class="st">"Daily Food Cons.\n Ad. Equiv"</span>, <span class="st">"Daily Food Cons."</span>,</span>
 <span>    <span class="st">"Gifted Daily Food\n Cons. Ad. Equiv"</span>, <span class="st">"Gifted Daily\n Food Cons."</span>,</span>
 <span>    <span class="st">"Consumed Gifted\n Food {0,1}"</span>, <span class="st">"Food Security"</span><span class="op">)</span>,</span>
+<span>  measure <span class="op">=</span> <span class="st">"avg"</span>,</span>
 <span>  model_number <span class="op">=</span> <span class="fl">1</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -85,6 +86,10 @@ workflow in Stata and makes them ready for plotting.</p>
 
 <dt>var_labels</dt>
 <dd><p>A chacater vector of corresponding variable names.</p></dd>
+
+
+<dt>measure</dt>
+<dd><p>A string indicating the measure to plot e.g. <code>"avg", b</code></p></dd>
 
 
 <dt>model_number</dt>

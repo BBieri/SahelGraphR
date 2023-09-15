@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   SahelMaps: SahelMaps.html
-last_built: 2023-05-24T15:10Z
+last_built: 2023-09-15T23:27Z
 urls:
   reference: https://bbieri.github.io/SahelGraphR/reference
   article: https://bbieri.github.io/SahelGraphR/articles
